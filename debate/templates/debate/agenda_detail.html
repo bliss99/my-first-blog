@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="post">
+        <div class="date">
+            {{ agenda.author }} [{{ agenda.created_date }}]
+        </div>
+        <a class="btn btn-default" href="{% url 'agenda_edit' pk=agenda.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <p>{{ agenda.text|linebreaks }}</p>
+    </div>
+
+    <div style="float:left; width:48%; border:1px solid; border-top:3px solid; border-color:lightblue; padding:5px; margin:5px;">
+    	<h3>AGREE <a class="btn btn-default" href="{% url 'offer_opinion' agenda_id=agenda.pk stance=10%}"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+    	</h3>
+    	
+		{% for opinion in agree %}
+			<div>
+				<div class="date">{{ opinion.author }} [{{ opinion.created_date }}]</div>
+				<p>{{opinion.text}}</p>
+			</div>
+		{% endfor %}
+	</div>
+	<div style="float:right; width:48%; border:1px solid; border-top:3px solid; border-color:pink; padding:5px; margin:5px;">
+		<h3>DISAGREE <a class="btn btn-default" href="{% url 'offer_opinion' agenda_id=agenda.pk stance=90%}"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+		</h3>
+
+		{% for opinion in disagree %}
+			<div>
+				<div class="date"> {{ opinion.author }} [{{ opinion.created_date }}]</div>
+				<p>{{opinion.text}}</p>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

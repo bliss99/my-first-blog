@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for agenda in agendas %}
+    <div class="post">
+        <div class="date">
+            {{agenda.author}} [{{ agenda.created_date }}]
+        </div>
+        <a href="{% url 'agenda_detail' pk=agenda.pk %}">
+        	<p>{{ agenda.text|linebreaks }}</p>
+    	</a>
+        
+    </div>
+{% endfor %}
+{% endblock %}
