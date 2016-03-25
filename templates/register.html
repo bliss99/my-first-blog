@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Create an account{% endblock %}
+
+{% block content %}
+  <h1>계정 만들기</h1>
+
+  <form action="{% url 'signup' %}" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Create the account">
+      <input type="button" value="Cancel" onClick="javascript:history.go(-1);">
+  </form>
+{% endblock %}

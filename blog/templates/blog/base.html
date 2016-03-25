@@ -10,7 +10,13 @@
     <body>
         <div class="page-header">
             {% if user.is_authenticated %}
-                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus" title="글쓰기"></span></a>
+                <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-log-out" title="Logout"></span></a>
+            {% endif %}
+            {% if not user.is_authenticated %}
+                <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-log-in" title="Login"></span></a>
+                <a href="{% url 'signup' %}" class="top-menu"><span class="glyphicon glyphicon-user" title="계정생성"></span></a>
+                
             {% endif %}
             <h1><a href="/">Django Test Blog</a></h1>
         </div>
