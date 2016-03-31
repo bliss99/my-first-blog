@@ -20,3 +20,220 @@
 [25/Mar2016 03/25/16:2439] DEBUG [debate.views:58] stance: 10
 [25/Mar2016 03/25/16:2439] DEBUG [debate.views:63] form.stance: 10
 [25/Mar2016 03/25/16:2439] DEBUG [debate.views:64] form.stance: 10
+[30/Mar2016 03/30/16:4639] DEBUG [debate.views:26] [<Category: 경제>, <Category: 기술>, <Category: 문화>, <Category: 사회>, <Category: 세계>, <Category: 정치>]
+[30/Mar2016 03/30/16:4836] DEBUG [debate.views:26] <django.template.backends.django.Template object at 0x000001F31E2BF898>
+[30/Mar2016 03/30/16:4849] DEBUG [debate.views:26] <django.template.backends.django.Template object at 0x000001F31E2BFB38>
+[30/Mar2016 03/30/16:5648] DEBUG [debate.views:26] <django.template.backends.django.Template object at 0x00000263195608D0>
+[30/Mar2016 03/30/16:5911] DEBUG [debate.views:27] <django.template.backends.django.Template object at 0x000001F17C50DF60>
+[31/Mar2016 03/31/16:0013] DEBUG [debate.views:27] <django.template.backends.django.Template object at 0x000001F17C5249E8>
+[31/Mar2016 03/31/16:0239] DEBUG [debate.views:52] kspyo
+[31/Mar2016 03/31/16:0315] DEBUG [debate.views:52] kspyo
+[31/Mar2016 03/31/16:0326] DEBUG [debate.views:52] kspyo
+[31/Mar2016 03/31/16:0455] DEBUG [debate.views:52] hello kspyo
+[31/Mar2016 03/31/16:1152] DEBUG [debate.views:52] hello kspyo
+[31/Mar2016 03/31/16:1218] DEBUG [debate.views:52] hello asdf
+[31/Mar2016 03/31/16:1555] DEBUG [debate.views:53] hello asdf
+[31/Mar2016 03/31/16:1601] DEBUG [debate.views:53] hello asdf
+[31/Mar2016 03/31/16:1601] DEBUG [debate.views:53] hello asdf
+[31/Mar2016 03/31/16:0027] DEBUG [debate.views:109] <input id="id_depth" name="depth" type="hidden" value="1" />
+[31/Mar2016 03/31/16:0401] DEBUG [debate.views:109] 1
+[31/Mar2016 03/31/16:0525] DEBUG [debate.views:109] 4
+[31/Mar2016 03/31/16:0555] DEBUG [debate.views:109] 1
+[31/Mar2016 03/31/16:4237] DEBUG [debate.views:132] 4
+[31/Mar2016 03/31/16:4249] DEBUG [debate.views:132] 4
+[31/Mar2016 03/31/16:4431] DEBUG [debate.views:132] 4
+[31/Mar2016 03/31/16:4459] DEBUG [debate.views:132] 4
+[31/Mar2016 03/31/16:4515] DEBUG [debate.views:132] 4
+[31/Mar2016 03/31/16:4519] DEBUG [debate.views:132] 4
+[31/Mar2016 03/31/16:4550] DEBUG [debate.views:132] 4
+[31/Mar2016 03/31/16:4556] DEBUG [debate.views:132] 4
+[31/Mar2016 03/31/16:4620] DEBUG [debate.views:132] 4
+[31/Mar2016 03/31/16:4716] DEBUG [debate.views:132] first 4
+[31/Mar2016 03/31/16:4716] DEBUG [debate.views:136] second 4
+[31/Mar2016 03/31/16:4716] DEBUG [debate.views:141] third 2
+[31/Mar2016 03/31/16:4818] DEBUG [debate.views:132] first 4
+[31/Mar2016 03/31/16:4818] DEBUG [debate.views:136] second ddddddddd...경제
+[31/Mar2016 03/31/16:4902] DEBUG [debate.views:132] first 4
+[31/Mar2016 03/31/16:4902] DEBUG [debate.views:136] second ddddddddd...경제
+[31/Mar2016 03/31/16:5009] DEBUG [debate.views:132] first 4
+[31/Mar2016 03/31/16:5009] DEBUG [debate.views:136] second ddddddddd...경제
+[31/Mar2016 03/31/16:5035] DEBUG [debate.views:132] first 4
+[31/Mar2016 03/31/16:5035] DEBUG [debate.views:136] second ddddddddd...경제
+[31/Mar2016 03/31/16:5125] DEBUG [debate.views:132] first 4
+[31/Mar2016 03/31/16:5125] DEBUG [debate.views:136] second ddddddddd...경제
+[31/Mar2016 03/31/16:5405] DEBUG [debate.views:132] first 4
+[31/Mar2016 03/31/16:5405] DEBUG [debate.views:136] second ddddddddd...경제
+[31/Mar2016 03/31/16:5407] DEBUG [debate.views:132] first 5
+[31/Mar2016 03/31/16:5407] DEBUG [debate.views:136] second ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ...경제
+[31/Mar2016 03/31/16:5407] DEBUG [debate.views:141] third ddddddddd...경제
+[31/Mar2016 03/31/16:5407] DEBUG [debate.views:145] (<Agenda: ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ...경제>, <Agenda: ddddddddd...경제>)
+[31/Mar2016 03/31/16:5738] DEBUG [debate.views:132] first 4
+[31/Mar2016 03/31/16:5738] DEBUG [debate.views:136] second ddddddddd...
+[31/Mar2016 03/31/16:5851] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:5856] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:5932] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0051] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0153] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0217] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0233] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0403] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0411] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0414] DEBUG [debate.views:132] first 4
+[31/Mar2016 03/31/16:0414] DEBUG [debate.views:136] second ddddddddd...
+[31/Mar2016 03/31/16:0420] DEBUG [debate.views:132] first 5
+[31/Mar2016 03/31/16:0420] DEBUG [debate.views:136] second ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ...
+[31/Mar2016 03/31/16:0420] DEBUG [debate.views:143] third ddddddddd...
+[31/Mar2016 03/31/16:0420] DEBUG [debate.views:146] (<Agenda: ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ...>, <Agenda: ddddddddd...>)
+[31/Mar2016 03/31/16:0458] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0522] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0529] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0638] DEBUG [debate.views:132] first 3
+[31/Mar2016 03/31/16:0638] DEBUG [debate.views:136] second markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...
+[31/Mar2016 03/31/16:0638] DEBUG [debate.views:143] third markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...
+[31/Mar2016 03/31/16:0638] DEBUG [debate.views:146] (<Agenda: markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...>, <Agenda: markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[31/Mar2016 03/31/16:0719] DEBUG [debate.views:132] first 2
+[31/Mar2016 03/31/16:0729] DEBUG [debate.views:132] first 3
+[31/Mar2016 03/31/16:0729] DEBUG [debate.views:136] second markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...
+[31/Mar2016 03/31/16:0729] DEBUG [debate.views:143] third markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...
+[31/Mar2016 03/31/16:0729] DEBUG [debate.views:146] (<Agenda: markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...>, <Agenda: markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...>)
+[31/Mar2016 03/31/16:0821] DEBUG [debate.views:132] first 8
+[31/Mar2016 03/31/16:0821] DEBUG [debate.views:136] second 첫번째 중재안...
+[31/Mar2016 03/31/16:0821] DEBUG [debate.views:143] third markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...
+[31/Mar2016 03/31/16:0821] DEBUG [debate.views:146] (<Agenda: 첫번째 중재안...>, <Agenda: markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...>)
+[31/Mar2016 03/31/16:1555] DEBUG [debate.views:138] first 첫번째 중재안...
+[31/Mar2016 03/31/16:1555] DEBUG [debate.views:144] second 첫번째 중재안...
+[31/Mar2016 03/31/16:1555] DEBUG [debate.views:150] third 첫번째 중재안...
+[31/Mar2016 03/31/16:1555] DEBUG [debate.views:153] (<Agenda: 첫번째 중재안...>, <Agenda: 첫번째 중재안...>, <Agenda: 첫번째 중재안...>)
+[31/Mar2016 03/31/16:1610] DEBUG [debate.views:138] first 첫번째 중재안...
+[31/Mar2016 03/31/16:1610] DEBUG [debate.views:144] second markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...
+[31/Mar2016 03/31/16:1610] DEBUG [debate.views:153] (<Agenda: markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...>, <Agenda: 첫번째 중재안...>)
+[31/Mar2016 03/31/16:1719] DEBUG [debate.views:138] first 첫번째 중재안...
+[31/Mar2016 03/31/16:1719] DEBUG [debate.views:144] second markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...
+[31/Mar2016 03/31/16:1719] DEBUG [debate.views:153] (<Agenda: markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...>, <Agenda: 첫번째 중재안...>)
+[31/Mar2016 03/31/16:2023] DEBUG [debate.views:137] first ddddddddd...
+[31/Mar2016 03/31/16:2029] DEBUG [debate.views:137] first markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...
+[31/Mar2016 03/31/16:2029] DEBUG [debate.views:152] (<Agenda: markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...>,)
+[31/Mar2016 03/31/16:2031] DEBUG [debate.views:137] first 첫번째 중재안...
+[31/Mar2016 03/31/16:2031] DEBUG [debate.views:143] second markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...
+[31/Mar2016 03/31/16:2031] DEBUG [debate.views:152] (<Agenda: markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...>, <Agenda: 첫번째 중재안...>)
+[31/Mar2016 03/31/16:2033] DEBUG [debate.views:137] first 두번째 중재안
+좀 길게 써야 겠구만
+최소 100글자 입력으로 해야겠음...
+[31/Mar2016 03/31/16:2033] DEBUG [debate.views:143] second 첫번째 중재안...
+[31/Mar2016 03/31/16:2033] DEBUG [debate.views:149] third markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...
+[31/Mar2016 03/31/16:2033] DEBUG [debate.views:152] (<Agenda: markItUp! universal markup jQuery editor
+
+markItUp! is a JavaScript plugin built on the jQuery lib...>, <Agenda: 첫번째 중재안...>, <Agenda: 두번째 중재안
+좀 길게 써야 겠구만
+최소 100글자 입력으로 해야겠음...>)
+[31/Mar2016 03/31/16:2151] DEBUG [debate.views:137] first 첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 ...
+[31/Mar2016 03/31/16:2151] DEBUG [debate.views:143] second Free sites have a limited lifespan, but you can renew that here up to a maximum of three months from...
+[31/Mar2016 03/31/16:2151] DEBUG [debate.views:152] (<Agenda: Free sites have a limited lifespan, but you can renew that here up to a maximum of three months from...>, <Agenda: 첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 ...>)
+[31/Mar2016 03/31/16:2221] DEBUG [debate.views:137] first 두번째 중재안 테스트
+두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스...
+[31/Mar2016 03/31/16:2221] DEBUG [debate.views:143] second 첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 ...
+[31/Mar2016 03/31/16:2221] DEBUG [debate.views:149] third Free sites have a limited lifespan, but you can renew that here up to a maximum of three months from...
+[31/Mar2016 03/31/16:2221] DEBUG [debate.views:152] (<Agenda: Free sites have a limited lifespan, but you can renew that here up to a maximum of three months from...>, <Agenda: 첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 중재안 등록 테스트
+첫번째 ...>, <Agenda: 두번째 중재안 테스트
+두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스트두번째 중재안 테스...>)
+[31/Mar2016 03/31/16:0438] DEBUG [debate.views:116] i'm disagree!...
+[31/Mar2016 03/31/16:0438] DEBUG [debate.views:116] i agree!!...
+[31/Mar2016 03/31/16:0438] DEBUG [debate.views:116] asdf...
+[31/Mar2016 03/31/16:0438] DEBUG [debate.views:116] 찬성합니다.......
+<div>찬성합니다.......</div>
+<div>찬성합니다.......</div><div>찬성합니다.......</div><div>찬성합니다........
+[31/Mar2016 03/31/16:0526] DEBUG [debate.views:116] i'm disagree!...
+[31/Mar2016 03/31/16:0526] DEBUG [debate.views:116] i agree!!...
+[31/Mar2016 03/31/16:0526] DEBUG [debate.views:116] asdf...
+[31/Mar2016 03/31/16:0526] DEBUG [debate.views:116] 찬성합니다.......
+<div>찬성합니다.......</div>
+<div>찬성합니다.......</div><div>찬성합니다.......</div><div>찬성합니다........

@@ -1,10 +1,29 @@
-{% extends 'base.html' %}
+{% extends 'base_debate.html' %}
 
 {% block content %}
-    <h1>Offer Opinion</h1>
+    <div class="post">
+        <div class="date">
+            {{ agenda.author }} [{{ agenda.created_date }}]
+        </div>
+        <p>{{ agenda.text|linebreaks }}</p>
+    </div>
+    {% if form.stance.value == 10 %}
+    <h2>찬성 의견</h2>
+    {% else %}
+    <h2>반대 의견</h2>
+    {% endif %}
     <form method="POST" class="post-form">{% csrf_token %}
+    	<div>
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-        <button class="btn btn_default" onClick="javascript.hidtory.back();">Cancel</button>
+        </div>
+        <div>
+        <button type="submit" class="btn btn-sm btn-success">Save</button>
+        <button type="button" class="btn btn-sm btn-default" onClick="window.history.back()">Cancel</button>
+    	</div>
+    	<input id="files-upload" type="file" class="hidden">
     </form>
+<script>
+	$('#id_text').markItUp(mySettings);
+
+</script>
 {% endblock %}

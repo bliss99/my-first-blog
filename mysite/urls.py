@@ -29,6 +29,6 @@ urlpatterns = [
             success_url='/'), name='signup'
     ),
     url(r'^accounts/', include('django.contrib.auth.urls')),
-    url(r'', include('blog.urls')),
+  #  url(r'', include('blog.urls')),
     url(r'', include('debate.urls')),
 ]

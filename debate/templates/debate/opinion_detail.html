@@ -1,0 +1,27 @@
+{% extends 'base_debate.html' %}
+
+{% block content %}
+    <div class="post">
+        <div class="date">
+            {{ agenda.author }} [{{ agenda.created_date }}]
+        </div>
+        {% if request.user == agenda.author %}
+        <a class="btn btn-default" href="{% url 'agenda_edit' pk=agenda.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <p>{{ agenda.text|linebreaks }}</p>
+    </div>
+    <div class="container">
+      <!-- Example row of columns -->
+    <div class="row">
+
+	    <div style="border:1px solid; border-top:3px solid; border-color:lightblue; padding:0px 5px;">
+			<div>
+				<div class="date">{{ opinion.author }} [{{ opinion.created_date }}]</div>
+				{% if request.user == agenda.author %}
+				<a class="btn btn-default" href="{% url 'opinion_edit' pk=opinion.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+				{% endif %}
+		        <p>{{ opinion.text|linebreaks}}</p>			    	
+			</div>
+		</div>
+	</div>
+{% endblock %}

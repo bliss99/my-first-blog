@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+<p class="pull-right visible-xs">
+  <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+</p>
+<div class="jumbotron">
+  <h2>토론 합시다!</h2>
+  <p>각자 생각과 시각이 다릅니다. 그렇기 때문에 지금 우리에게 닥친 문제들을 해결할 수 있는 방법이 있는 것이기도 합니다. <br>토론을 통해 협의를 하고 결론에 도달하면 우리는 가장 좋은 길을 가게 될 것입니다. <br>바른 토론을 합시다.</p>
+  <a class="btn btn-sm btn-default" href="{% url 'offer_agenda' %}" role="button">안건등록</a>
+</div>
+<div class="row">
+  {% block content %}
+  {% endblock %}
+</div>
+{% endblock body %}

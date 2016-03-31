@@ -2,12 +2,12 @@
 {% block content %}
 
 {% for agenda in agendas %}
-    <div class="post">
+	<div class="col-xs-6 col-lg-4">
         <div class="date">
             {{agenda.author}} [{{ agenda.created_date }}]
         </div>
         <a href="{% url 'agenda_detail' pk=agenda.pk %}">
-        	<p>{{ agenda.text|linebreaks }}</p>
+        	<p>{{ agenda.text|linebreaks|slice:":200" }}...</p>
     	</a>
         
     </div>

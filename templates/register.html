@@ -1,9 +1,10 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
+{% load widget_tweaks %}
 
 {% block title %}Create an account{% endblock %}
 
 {% block content %}
-  <h1>계정 만들기</h1>
+  <h2>계정 만들기</h2>
 
   <form action="{% url 'signup' %}" method="post">{% csrf_token %}
       {{ form.as_p }}

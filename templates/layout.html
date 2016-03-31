@@ -1,17 +1,75 @@
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="ko">
+<html>
+    <head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Please Debate</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'dist/css/bootstrap.min.css' %}" >
+        <link rel="stylesheet" type="text/css" href="{% static 'dist/css/bootstrap-theme.min.css' %}" >
+		    <link rel="stylesheet" type="text/css" href="{% static 'dist/css/signin.css' %}" >
+        <link rel="stylesheet" type="text/css" href="{% static 'dist/css/sticky-footer.css' %}" >
+    		<link rel="stylesheet" href="{% static 'dist/css/offcanvas.css' %}" >
+        <link rel="stylesheet" type="text/css" href="{% static 'markitup/skins/markitup/style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'markitup/sets/default/style.css' %}" />
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- markItUp! -->
+        <script type="text/javascript" src="{% static 'markitup/jquery.markitup.js' %}"></script>
+        <!-- markItUp! toolbar settings -->
+        <script type="text/javascript" src="{% static 'markitup/sets/default//set.js' %}"></script>
+        <script type="text/javascript">
+          function fnGetCategory(){
+            $.ajax({
+              url : "{% url 'category' %}",
+              success:function(data){
+                $('.dropdown-menu').html(data)
+              }
+            });
+          }
+        </script>
+        
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{% url 'debate_list' %}">Please Debate</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="{% url 'debate_list' %}">Home</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onClick="fnGetCategory()">Category <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                  </ul>
+                </li>
+                {% if user.is_authenticated %}
+                  <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                  <li><a href="{% url 'login' %}">Sign in</a></li>
+                  <li><a href="{% url 'signup' %}">Sign up</a></li>
+                {% endif %}
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+        <div class="container">
+          <div class="row">
+           	{% block body %}
+           	{% endblock body %}
+          </div>
+        </div>
+        <hr>
+        {% include 'footer.html' %}
+    </body>
 
-<head>
-    <title>{% block title %}mysite{% endblock %}</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-</head>
-
-<body>
-{% block content %}{% endblock %}
-</body>
-
+    
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
 </html>

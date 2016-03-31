@@ -1,34 +1,83 @@
-{% extends 'base.html' %}
+{% extends 'base_debate.html' %}
 
 {% block content %}
+{% for parent in parents %}
+    <div class="post">
+        <div class="date">
+            {{ parent.author }} [{{ parent.created_date }}]
+        </div>
+        {% if request.user == parent.author %}
+        <a class="btn btn-default" href="{% url 'agenda_edit' pk=parent.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <p>{{ parent.text|linebreaks }}</p>
+    </div>
+{% endfor %}
+
+
     <div class="post">
         <div class="date">
             {{ agenda.author }} [{{ agenda.created_date }}]
         </div>
+        {% if request.user == agenda.author %}
         <a class="btn btn-default" href="{% url 'agenda_edit' pk=agenda.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
         <p>{{ agenda.text|linebreaks }}</p>
     </div>
+    <div class="container">
+      <!-- Example row of columns -->
+    <div class="row">
+    	<div class="col-md-4">
 
-    <div style="float:left; width:48%; border:1px solid; border-top:3px solid; border-color:lightblue; padding:5px; margin:5px;">
-    	<h3>AGREE <a class="btn btn-default" href="{% url 'offer_opinion' agenda_id=agenda.pk stance=10%}"><span class="glyphicon glyphicon-thumbs-up"></span></a>
-    	</h3>
-    	
-		{% for opinion in agree %}
-			<div>
-				<div class="date">{{ opinion.author }} [{{ opinion.created_date }}]</div>
-				<p>{{opinion.text}}</p>
+		    <div style="border:1px solid; border-top:3px solid; border-color:lightblue; padding:0px 5px;">
+		    	<h3>찬성측 <a class="btn btn-default" href="{% url 'offer_opinion' agenda_id=agenda.pk stance=10%}"><span class="glyphicon glyphicon-thumbs-up"></span></a>
+		    	</h3>
+		    	
+				{% for opinion in agree %}
+					<div>
+						<div class="date">{{ opinion.author }} [{{ opinion.created_date }}]</div>
+						<a href="{% url 'opinion_detail' pk=opinion.pk %}">
+				        	<p>{{ opinion.text|linebreaks|slice:":200" }}...</p>
+				    	</a>
+					</div>
+				{% endfor %}
 			</div>
-		{% endfor %}
-	</div>
-	<div style="float:right; width:48%; border:1px solid; border-top:3px solid; border-color:pink; padding:5px; margin:5px;">
-		<h3>DISAGREE <a class="btn btn-default" href="{% url 'offer_opinion' agenda_id=agenda.pk stance=90%}"><span class="glyphicon glyphicon-thumbs-down"></span></a>
-		</h3>
 
-		{% for opinion in disagree %}
-			<div>
-				<div class="date"> {{ opinion.author }} [{{ opinion.created_date }}]</div>
-				<p>{{opinion.text}}</p>
+		</div>
+		{% if agenda.depth < 3 %}
+		<div class="col-md-4">
+
+			<div style="border:1px solid; border-top:3px solid; border-color:yellowgreen; padding:0px 5px;">
+				<h3>중재안 <a class="btn btn-default" href="{% url 'offer_arbitration' parent_id=agenda.pk %}"><span class="glyphicon glyphicon-hand-up"></span></a>
+				</h3>
+
+				{% for arbitration in arbitrations %}
+					<div>
+						<div class="date"> {{ arbitration.author }} [{{ arbitration.created_date }}]</div>
+						<a href="{% url 'arbitration_detail' pk=arbitration.pk %}">
+				        	<p>{{ arbitration.text|linebreaks|slice:":200" }}...</p>
+				    	</a>
+					</div>
+				{% endfor %}
 			</div>
-		{% endfor %}
+
+		</div>
+		{% endif %}
+		<div class="col-md-4">
+
+			<div style="border:1px solid; border-top:3px solid; border-color:pink; padding:0px 5px;">
+				<h3>반대측 <a class="btn btn-default" href="{% url 'offer_opinion' agenda_id=agenda.pk stance=90%}"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+				</h3>
+
+				{% for opinion in disagree %}
+					<div>
+						<div class="date"> {{ opinion.author }} [{{ opinion.created_date }}]</div>
+						<a href="{% url 'opinion_detail' pk=opinion.pk %}">
+				        	<p>{{ opinion.text|linebreaks|slice:":200" }}...</p>
+				    	</a>
+					</div>
+				{% endfor %}
+			</div>
+
+		</div>
 	</div>
 {% endblock %}
