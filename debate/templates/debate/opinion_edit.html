@@ -5,25 +5,61 @@
         <div class="date">
             {{ agenda.author }} [{{ agenda.created_date }}]
         </div>
-        <p>{{ agenda.text|linebreaks }}</p>
+        <div>{{ agenda.text|safe }}</div>
     </div>
+	<div class="page-header">
     {% if form.stance.value == 10 %}
     <h2>찬성 의견</h2>
     {% else %}
     <h2>반대 의견</h2>
     {% endif %}
-    <form method="POST" class="post-form">{% csrf_token %}
+	</div>
+    <form id="edit_form" method="POST" class="post-form">{% csrf_token %}
     	<div>
-        {{ form.as_p }}
+		{% if form.errors %}
+			{% for error in form.non_field_errors %}
+				<div class="alert alert-danger" role="alert">
+				{{ error|escape }}
+				</div>
+			{% endfor %}
+		{% endif %}
+		
+		{% for field in form %}
+			<div class="fieldWrapper">
+			{% if field.errors %}
+				<div class="alert alert-warning" role="alert">
+					{{field.errors}}
+				</div>
+			{% endif %}
+			{% if field.label  == 'Text' %}
+				{% include "debate/editorToolBar.html" %} 
+				<div id="editor">
+					{{field.value|safe}}
+				</div>
+			{% endif%}
+			{{ field }}
+			</div>
+		{% endfor %}
         </div>
-        <div>
-        <button type="submit" class="btn btn-sm btn-success">Save</button>
-        <button type="button" class="btn btn-sm btn-default" onClick="window.history.back()">Cancel</button>
-    	</div>
-    	<input id="files-upload" type="file" class="hidden">
     </form>
+    <div>
+        <button type="button" class="btn btn-sm btn-success" onclick="save();">Save</button>
+        <button type="button" class="btn btn-sm btn-default" onClick="window.history.back()">Cancel</button>
+    </div>
 <script>
-	$('#id_text').markItUp(mySettings);
-
+	initToolbarBootstrapBindings();  
+	$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
+    window.prettyPrint && prettyPrint();
+	$('#id_text').hide();
+	
+	//오류메시지로 천천히 이동
+	$('html, body').animate({
+		scrollTop: ($('.alert').first().offset().top)
+	},1200);
+		
+	function save(){
+		$('#id_text').text($('#editor').cleanHtml());
+		$("#edit_form").submit();
+	}	
 </script>
 {% endblock %}

@@ -1,7 +1,3 @@
 {% for item in category %}
-                    <li><a href="javascript:alert('아직안됨');">{{ item.name }}</a></li>
+                    <li><a href="{% url 'debate_list_category' pk=item.pk %}">{{ item.name }}</a></li>
 {% endfor %}
-<!--
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">기술/문화</li>
--->

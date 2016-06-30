@@ -1,0 +1,11 @@
+.opinion_agree {
+	border:1px solid; border-top:3px solid; border-color:lightblue; padding:0px 5px;
+}
+
+.opinion_disagree {
+	border:1px solid; border-top:3px solid; border-color:pink; padding:0px 5px;
+}
+
+.arbitration {
+	border:1px solid; border-top:3px solid; border-color:yellowgreen; padding:0px 5px;
+}

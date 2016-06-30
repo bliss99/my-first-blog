@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.debate_list, name='debate_list'),
+	url(r'^debate/(?P<pk>[0-9]+)/$', views.debate_list_category, name='debate_list_category'),
 
     url(r'^debate/agenda/(?P<pk>[0-9]+)/$', views.agenda_detail, name='agenda_detail'),
 	url(r'^debate/agenda/offer$', views.offer_agenda, name='offer_agenda'),

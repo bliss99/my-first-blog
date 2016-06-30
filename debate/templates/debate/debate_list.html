@@ -3,11 +3,12 @@
 
 {% for agenda in agendas %}
 	<div class="col-xs-6 col-lg-4">
-        <div class="date">
-            {{agenda.author}} [{{ agenda.created_date }}]
+	<span class="glyphicon glyphicon glyphicon-leaf" aria-hidden="true">{{agenda.category.name}}</span>
+        <div>
+            <h4>{{agenda.author}}</h4> [{{ agenda.created_date }}]
         </div>
         <a href="{% url 'agenda_detail' pk=agenda.pk %}">
-        	<p>{{ agenda.text|linebreaks|slice:":200" }}...</p>
+        	<p>{{ agenda.text|striptags |slice:":200" }}...</p>
     	</a>
         
     </div>

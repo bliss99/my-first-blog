@@ -12,11 +12,16 @@ from django.core.urlresolvers import reverse
 import logging
 logger = logging.getLogger(__name__)
 
-
+default_text = "예의있고 논리적인 글로 올바른 토론문화를 만듭시다."
 
 def debate_list(request):
     request.session.set_expiry(0)
     agendas = Agenda.objects.filter(depth=0).order_by('created_date')
+    return render(request, 'debate/debate_list.html', {'agendas': agendas})
+
+def debate_list_category(request, pk):
+    request.session.set_expiry(0)
+    agendas = Agenda.objects.filter(category=pk).filter(depth=0).order_by('created_date')
     return render(request, 'debate/debate_list.html', {'agendas': agendas})
 
 def agenda_detail(request, pk):
@@ -32,8 +37,9 @@ def agenda_detail(request, pk):
 def category(request):
     category = Category.objects.all().order_by('name')
     template = get_template('debate/category.html')
-    value = RequestContext(request, {'category':category})
-    output = template.render(value)
+#    value = RequestContext(request, {'category':category})
+#    output = template.render(value)
+    output = template.render({'category':category}, request)
     return HttpResponse(output)
 
 @login_required
@@ -47,7 +53,7 @@ def offer_agenda(request):
             agenda.save()
             return redirect('debate.views.agenda_detail', pk=agenda.pk)
     else:
-        form = AgendaForm()
+        form = AgendaForm(initial={"text":default_text})
     return render(request, 'debate/agenda_edit.html', {'form': form})
 
 @login_required
@@ -55,6 +61,7 @@ def agenda_edit(request, pk):
     request.session.set_expiry(0)
     
     agenda = get_object_or_404(Agenda, pk=pk)
+    parent_agenda = agenda.parent_agenda
     if request.method == "POST":
         form = AgendaForm(request.POST, instance=agenda)
         if form.is_valid():
@@ -62,12 +69,20 @@ def agenda_edit(request, pk):
             agenda.author = request.user
             agenda.modified_date = timezone.now()
             agenda.save()
-            return redirect('debate.views.agenda_detail', pk=agenda.pk)
+            if agenda.depth == 0:
+                return redirect('debate.views.agenda_detail', pk=agenda.pk)
+            else :
+                return redirect('debate.views.arbitration_detail', pk=agenda.pk)
     else:
         if not request.user == agenda.author:
             return redirect(reverse('agenda_detail', args=(pk,)))
+        if agenda.depth > 0:
+            parent_agenda = agenda.parent_agenda
+        
         form = AgendaForm(instance=agenda)
-    return render(request, 'debate/agenda_edit.html', {'form': form})
+        
+        
+    return render(request, 'debate/agenda_edit.html', {'form': form, "parent_agenda":parent_agenda})
 
 
 
@@ -78,6 +93,7 @@ def agenda_edit(request, pk):
 @login_required
 def offer_opinion(request, agenda_id, stance):
     request.session.set_expiry(0)
+    agenda = get_object_or_404(Agenda, pk=agenda_id)
     if request.method == "POST":
         form = OpinionForm(request.POST)
         if form.is_valid():
@@ -86,8 +102,7 @@ def offer_opinion(request, agenda_id, stance):
             opinion.save()
             return redirect('debate.views.agenda_detail', pk=opinion.agenda.pk)
     else:
-        agenda = get_object_or_404(Agenda, pk=agenda_id)
-        form = OpinionForm(initial={'stance':int(stance), "agenda":agenda})
+        form = OpinionForm(initial={'stance':int(stance), "agenda":agenda, "text":default_text})
 
     return render(request, 'debate/opinion_edit.html', {'form': form, "agenda":agenda})
 
@@ -103,6 +118,8 @@ def opinion_edit(request, pk):
             opinion.modified_date = timezone.now()
             opinion.save()
             return redirect('debate.views.agenda_detail', pk=opinion.agenda.pk)
+        else :
+            logger.debug("form error %s", form.errors)
     else:
         form = OpinionForm(instance=opinion)
     return render(request, 'debate/opinion_edit.html', {'form': form, 'agenda':opinion.agenda})
@@ -141,7 +158,8 @@ def offer_arbitration(request, parent_id):
         agenda = get_object_or_404(Agenda, pk=parent_id)
         form = AgendaForm(initial={'parent_agenda':parent_id, 
                                     'depth':agenda.depth+1, 
-                                    'category':agenda.category})
+                                    'category':agenda.category,
+									"text":default_text})
     return render(request, 'debate/agenda_edit.html', {'form': form})
 
 

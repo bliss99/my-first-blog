@@ -7,18 +7,24 @@
         <title>Please Debate</title>
         <link rel="stylesheet" type="text/css" href="{% static 'dist/css/bootstrap.min.css' %}" >
         <link rel="stylesheet" type="text/css" href="{% static 'dist/css/bootstrap-theme.min.css' %}" >
-		    <link rel="stylesheet" type="text/css" href="{% static 'dist/css/signin.css' %}" >
+	    <link rel="stylesheet" type="text/css" href="{% static 'dist/css/signin.css' %}" >
         <link rel="stylesheet" type="text/css" href="{% static 'dist/css/sticky-footer.css' %}" >
-    		<link rel="stylesheet" href="{% static 'dist/css/offcanvas.css' %}" >
-        <link rel="stylesheet" type="text/css" href="{% static 'markitup/skins/markitup/style.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'markitup/sets/default/style.css' %}" />
+   		<link rel="stylesheet" href="{% static 'dist/css/offcanvas.css' %}" >
+		<link rel="stylesheet" href="{% static 'css/debate.css' %}" >
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- bootstrap-wysiwyg -->
+		<link href="{% static 'bootstrap-wysiwyg/external/google-code-prettify/prettify.css' %}" rel="stylesheet">
+		<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+
+		<script src="{% static 'bootstrap-wysiwyg/external/jquery.hotkeys.js' %}"></script>
+		<script src="{% static 'bootstrap-wysiwyg/external/google-code-prettify/prettify.js' %}"></script>
+		<script src="{% static 'bootstrap-wysiwyg/bootstrap-wysiwyg.js' %}"></script>
+		<script src="{% static 'bootstrap-wysiwyg/init.js' %}"></script>
+		<link href="{% static 'bootstrap-wysiwyg/default.css' %}" rel="stylesheet">
     </head>
     <body>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- markItUp! -->
-        <script type="text/javascript" src="{% static 'markitup/jquery.markitup.js' %}"></script>
-        <!-- markItUp! toolbar settings -->
-        <script type="text/javascript" src="{% static 'markitup/sets/default//set.js' %}"></script>
+
         <script type="text/javascript">
           function fnGetCategory(){
             $.ajax({
@@ -28,6 +34,7 @@
               }
             });
           }
+
         </script>
         
         <nav class="navbar navbar-default navbar-fixed-top">

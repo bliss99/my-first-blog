@@ -8,19 +8,22 @@
         {% if request.user == agenda.author %}
         <a class="btn btn-default" href="{% url 'agenda_edit' pk=agenda.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
-        <p>{{ agenda.text|linebreaks }}</p>
+        <div>{{ agenda.text|safe }}</div>
     </div>
     <div class="container">
       <!-- Example row of columns -->
     <div class="row">
-
-	    <div style="border:1px solid; border-top:3px solid; border-color:lightblue; padding:0px 5px;">
+		{% if opinion.stance < 50 %}
+	    <div class="opinion_agree">
+		{% else %}
+		<div class="opinion_disagree">
+		{% endif %}
 			<div>
 				<div class="date">{{ opinion.author }} [{{ opinion.created_date }}]</div>
 				{% if request.user == agenda.author %}
 				<a class="btn btn-default" href="{% url 'opinion_edit' pk=opinion.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 				{% endif %}
-		        <p>{{ opinion.text|linebreaks}}</p>			    	
+				<div>{{ opinion.text|safe }}</div>
 			</div>
 		</div>
 	</div>
