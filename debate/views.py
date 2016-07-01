@@ -82,7 +82,7 @@ def agenda_edit(request, pk):
         form = AgendaForm(instance=agenda)
         
         
-    return render(request, 'debate/agenda_edit.html', {'form': form, "parent_agenda":parent_agenda})
+    return render(request, 'debate/agenda_edit.html', {'form': form})
 
 
 

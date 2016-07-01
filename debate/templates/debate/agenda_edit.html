@@ -2,13 +2,13 @@
 
 {% block content %}
 	<div class="page-header">
-    {% if form.depth.value > 0 %}
-		{{parent_agenda.text|safe}}
+    {% if form.depth.value|add:0 > 0 %}
 		<h2> 중재안 </h2>
     {% else %}
 		<h2> 안건 </h2>
     {% endif %}
 	<div>
+	{% include "debate/editorToolBar.html" %} 
     <form id="edit_form" method="POST" class="post-form">{% csrf_token %}
     	<div>
 		{% if form.errors %}
@@ -26,12 +26,6 @@
 				</div>
 			{% endif %}
 			<div class="input-group">
-			{% if field.label == 'Text' %}
-				{% include "debate/editorToolBar.html" %} 
-				<div id="editor">
-					{{field.value|safe}}
-				</div>
-			{% endif%}
 			{{ field  }}
 			</div>
 		{% endfor %}
@@ -42,20 +36,23 @@
 		<button type="button" class="btn btn-sm btn-default" onClick="window.history.back()">Cancel</button>
 	</div>
 <script>
-	initToolbarBootstrapBindings();  
-	$('#editor').wysiwyg({ fileUploadError: showErrorAlert} );
-    window.prettyPrint && prettyPrint();
-	$('#id_text').hide();
-	{% if form.depth.value > 0 %}
+	
+	$('#id_text').wysihtml5(EDITOR_OPTIONS);
+
+	
+	
+	{% if form.depth.value|add:0 > 0 %}
 		$('#id_category').hide();
 	{% endif %}
+	
+	
 	//오류메시지로 천천히 이동
-	$('html, body').animate({
-		scrollTop: ($('.alert').first().offset().top)
-	},1200);
-
+	if($('#edit_form').find('.alert').val()){
+		$('html, body').animate({
+			scrollTop: ($('.alert').first().offset().top)
+		},1200);
+	}
 	function save(){
-		$('#id_text').text($('#editor').cleanHtml());
 		$("#edit_form").submit();
 	}
 </script>
